@@ -1,0 +1,18 @@
+{
+  "audience": "public",
+  "source": {
+    "kind": "wiki",
+    "slug": "hornsby",
+    "title": "Hornsby"
+  },
+  "title": "Hornsby",
+  "summary": "A railway junction from 1886 — where the Northern line met the new North Shore line",
+  "image": {
+    "path": "media/b5b4b0f9330b7d8c290eac9cd570d750446ecefb9cc9c8c9f08680817b235508.jpg",
+    "alt": "Hornsby railway station circa 1900",
+    "credit": "Unknown author Unknown author, Public domain",
+    "license": "Public domain",
+    "license_url": "https://commons.wikimedia.org/wiki/File:Hornsby_railway_station_circa_1900.jpg",
+    "sha256": "b5b4b0f9330b7d8c290eac9cd570d750446ecefb9cc9c8c9f08680817b235508"
+  }
+}
