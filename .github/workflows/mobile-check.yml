@@ -1,0 +1,39 @@
+name: Public photo page mobile check
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - 'index.html'
+      - 'record.json'
+      - 'media/**'
+      - 'scripts/**'
+      - 'tests/**'
+      - 'package.json'
+      - 'package-lock.json'
+      - '.github/workflows/mobile-check.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  mobile:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+      - run: npm ci
+      - run: npx playwright install --with-deps chromium
+      - name: Open the live edge page in a remote mobile browser
+        run: node scripts/mobile-check.mjs https://darrenoakey.github.io/wiki-photo-410-public/ reports/mobile-check.json reports/mobile-check.png 'GitHub-hosted runner outside home; iPhone 13 emulation; cellular-like network shaping'
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: mobile-page-check
+          path: reports/
+          if-no-files-found: ignore

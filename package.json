@@ -1,0 +1,11 @@
+{
+  "name": "wiki-photo-410-mobile-check",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "check:mobile": "node scripts/mobile-check.mjs https://darrenoakey.github.io/wiki-photo-410-public/ reports/mobile-check.json reports/mobile-check.png 'Local run; mobile emulation only'"
+  },
+  "devDependencies": {
+    "playwright": "1.65.1"
+  }
+}
